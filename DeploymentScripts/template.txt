@@ -1,0 +1,10 @@
+start session
+scc set connect property localprojpath "<currentpath>\<reponame>"
+scc set connect property logfile "<reponame>.log"
+scc set connect property logappend false
+scc set connect property deletetempfiles "true"
+scc connect offline
+scc set target "<currentpath>\<reponame>\<targetname>.pbt" "refresh_all importonly"
+scc refresh target incremental
+scc close
+end session
